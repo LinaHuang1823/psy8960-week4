@@ -14,7 +14,4 @@ is.na(wide_tbl[,c("q1", "q2", "q3", "q4", "q5")]) <- !wide_tbl[,c("q1", "q2", "q
 
 
 wide_tbl<- wide_tbl[!is.na(wide_tbl$q2), ]
-
-
-
-
+long_tbl <- pivot_longer(wide_tbl, cols = q1:q5, names_to = "question", values_to = "response")
